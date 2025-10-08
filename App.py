@@ -1,7 +1,12 @@
-from Chatbot import crear_interfaz
+import os
+import gradio as gr
+from Chatbot import chat_function  # ejemplo de import
 
-app = crear_interfaz()
+port = int(os.environ.get("PORT", 7860))
 
-# Render ejecuta en el puerto 8080
-if __name__ == "__main__":
-    app.launch(server_name="0.0.0.0", server_port=8080)
+with gr.Blocks() as demo:
+    chatbot = gr.Chatbot(type="messages")
+    msg = gr.Textbox()
+    msg.submit(chat_function, msg, chatbot)
+
+demo.launch(server_name="0.0.0.0", server_port=port)
