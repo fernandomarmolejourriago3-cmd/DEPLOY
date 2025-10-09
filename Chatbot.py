@@ -1,4 +1,3 @@
-import gradio as gr
 from nltk.chat.util import Chat, reflections
 
 pares = [
@@ -16,9 +15,11 @@ def responder(mensaje):
         return "Selecciona una opción:\n1️⃣ Información\n2️⃣ Saludos\n3️⃣ Despedida"
     return chat.respond(mensaje) or "No entendí, intenta con otra opción."
 
-# 👉 Esta función es la que usará App.py
-def chat_function(mensaje, historia=[]):
-    historia.append(("Tú", mensaje))
+# ✅ Formato correcto para Gradio Chatbot (type="messages")
+def chat_function(mensaje, historia):
+    if historia is None:
+        historia = []
+    historia.append({"role": "user", "content": mensaje})
     respuesta = responder(mensaje)
-    historia.append(("Bot", respuesta))
+    historia.append({"role": "assistant", "content": respuesta})
     return "", historia
