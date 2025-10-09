@@ -1,6 +1,7 @@
 import os
 import gradio as gr
-from chat import responder  # nota: solo usamos la función básica
+from Chatbot import responder
+
 
 port = int(os.environ.get("PORT", 7860))
 
@@ -18,3 +19,4 @@ demo = gr.ChatInterface(
 )
 
 demo.launch(server_name="0.0.0.0", server_port=port)
+
