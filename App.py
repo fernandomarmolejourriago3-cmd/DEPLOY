@@ -13,10 +13,11 @@ def chat_function(mensaje, historia):
 # Interfaz moderna
 demo = gr.ChatInterface(
     fn=chat_function,
-    title="🤖 Chatbot en Render",
-    description="Chat simple con opciones de texto",
+    title="🤖 Asistente del Profe",
+    description="Chat de atención",
     theme="soft",
 )
 
 demo.launch(server_name="0.0.0.0", server_port=port)
+
 
