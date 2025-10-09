@@ -1,13 +1,20 @@
 import os
 import gradio as gr
-from Chatbot import chat_function  # ejemplo de import
+from chat import responder  # nota: solo usamos la función básica
 
 port = int(os.environ.get("PORT", 7860))
 
-with gr.Blocks() as demo:
-    chatbot = gr.Chatbot(type="messages")
-    msg = gr.Textbox(label="Escribe tu mensaje:")
-    msg.submit(chat_function, msg, chatbot)
+# función que maneja el chat (Gradio maneja el historial internamente)
+def chat_function(mensaje, historia):
+    respuesta = responder(mensaje)
+    return respuesta
+
+# Interfaz moderna
+demo = gr.ChatInterface(
+    fn=chat_function,
+    title="🤖 Chatbot en Render",
+    description="Chat simple con opciones de texto",
+    theme="soft",
+)
 
 demo.launch(server_name="0.0.0.0", server_port=port)
-
