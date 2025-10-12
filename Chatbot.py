@@ -1,21 +1,50 @@
 from nltk.chat.util import Chat, reflections
 
 pares = [
-    [r"hola|hi|hello|pola profe|hola profe fernando|hola fernando|fernando|compañero|hoa", ["¡Hola! ¿Como puedo Ayudarte?, para conocer las opciones de asesoria escribe "Menú""]],
-    [r"Profe|Como estas", ["Bien y tu como estas"]],
-    [r"1", ["Opción 1 seleccionada: En el formulario (https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAAJpMRvhUQkY3UlBCU0IyTVlORUo4Nkk0NUlTM1k2Ny4u&topview=Prefil) introduce el número de la Fase de la que desea conocer la calificación"]],
-    [r"2", ["Opción 2 seleccionada: Agenda con el profe para que te explique la Actividad"]],
-    [r"3", ["Opción 3 seleccionada: Escribe en el formulario campo observación el detalle (Nombre de Evidencia) que desea vaidar nota"]],
-    [r"(.*) adiós|Luego hablamos", ["¡Hasta luego escribeme a este numero de Whatsapp = 3052546933!"]],
+    [r"hola|hi|hello|pola profe|hola profe fernando|hola fernando|fernando|compañero|hoa",
+     ["¡Hola! ¿Cómo puedo ayudarte? 😊 Para conocer las opciones de asesoría escribe 'menú'."]],
+
+    [r"profe|como estas",
+     ["Bien 😄 ¿y tú cómo estás?"]],
+
+    [r"1",
+     ["Opción 1 seleccionada:\n👉 Abre este enlace para consultar las calificaciones:\n"
+      "https://forms.office.com/r/YOURFORMID"]],
+
+    [r"2",
+     ["Opción 2 seleccionada: 🗓️ Agenda con el profe para que te explique la actividad."]],
+
+    [r"3",
+     ["Opción 3 seleccionada: ✍️ Escribe en el formulario, en el campo 'observación', el detalle (Nombre de Evidencia) que deseas validar nota."]],
+
+    [r"(.*)adiós|luego hablamos",
+     ["¡Hasta luego! 👋 Escríbeme a este número de WhatsApp: 3052546933"]]
 ]
 
 chat = Chat(pares, reflections)
 
 def responder(mensaje):
     mensaje = mensaje.lower().strip()
-    if mensaje.lower() in ["menu"]:
-        return "Selecciona una opción:\n1️⃣ Calificaciones\n2️⃣ No Comprende la Actividad\n3️⃣ Reclamo de Nota"
-    return chat.respond(mensaje) or "No entendí, intenta con otra opción."
+
+    if mensaje == "menú":
+        return ("Selecciona una opción:\n"
+                "1️⃣ Calificaciones\n"
+                "2️⃣ No comprende la actividad\n"
+                "3️⃣ Reclamo de nota")
+
+    respuesta = chat.respond(mensaje)
+    return respuesta or "No entendí, intenta con otra opción. 😅"
+
+
+# Ejemplo de prueba:
+if __name__ == "__main__":
+    print("Chatbot iniciado (escribe 'salir' para terminar)\n")
+    while True:
+        entrada = input("Tú: ")
+        if entrada.lower() == "salir":
+            print("Chatbot: ¡Hasta luego! 👋")
+            break
+        print("Chatbot:", responder(entrada))
 
 
 
