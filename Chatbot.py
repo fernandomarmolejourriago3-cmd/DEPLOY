@@ -9,7 +9,7 @@ pares = [
 
     [r"1",
      ["Opción 1 seleccionada:\n👉 Abre este enlace para consultar las calificaciones:\n"
-      "https://forms.office.com/r/YOURFORMID"]],
+      "https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAAJpMRvhUQkY3UlBCU0IyTVlORUo4Nkk0NUlTM1k2Ny4u&topview=Prefill"]],
 
     [r"2",
      ["Opción 2 seleccionada: 🗓️ Agenda con el profe para que te explique la actividad."]],
@@ -45,6 +45,7 @@ if __name__ == "__main__":
             print("Chatbot: ¡Hasta luego! 👋")
             break
         print("Chatbot:", responder(entrada))
+
 
 
 
