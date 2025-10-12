@@ -2,7 +2,7 @@ from nltk.chat.util import Chat, reflections
 
 pares = [
     [r"hola|hi|hello|pola profe|hola profe fernando|hola fernando|fernando|compañero|hoa|hola instructor|instructor",
-     ["¡Hola! ¿Cómo puedo ayudarte? 😊 Para conocer las opciones de asesoría escribe '1'."]],
+     ["¡Hola! ¿Cómo puedo ayudarte? 😊 Para conocer las opciones de asesoría escribe '0'."]],
 
     [r"profe|como estas",
      ["Bien 😄 ¿y tú cómo estás?"]],
@@ -45,6 +45,7 @@ if __name__ == "__main__":
             print("Chatbot: ¡Hasta luego! 👋")
             break
         print("Chatbot:", responder(entrada))
+
 
 
 
