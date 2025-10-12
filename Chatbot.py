@@ -1,21 +1,21 @@
 from nltk.chat.util import Chat, reflections
 
 pares = [
-    [r"hola|hi|hello|pola profe|hola profe fernando|hola fernando|fernando|compañero|hoa",
+    [r"hola|hi|hello|pola profe|hola profe fernando|hola fernando|fernando|compañero|hoa|hola instructor|instructor",
      ["¡Hola! ¿Cómo puedo ayudarte? 😊 Para conocer las opciones de asesoría escribe 'menú'."]],
 
     [r"profe|como estas",
      ["Bien 😄 ¿y tú cómo estás?"]],
 
     [r"1",
-     ["Opción 1 seleccionada:\n👉 Abre este enlace para consultar las calificaciones:\n"
-      "https://forms.office.com/Pages/DesignPageV2.aspx?origin=NeoPortalPage&subpage=design&id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAYAAJpMRvhUQkY3UlBCU0IyTVlORUo4Nkk0NUlTM1k2Ny4u&topview=Prefill"]],
+     ["Opción 1 seleccionada:\n✍️ Busca tu ficha en la pagina y consulta la nota en la pestaña Como Vamos"]],
 
     [r"2",
      ["Opción 2 seleccionada: 🗓️ Agenda con el profe para que te explique la actividad."]],
 
     [r"3",
-     ["Opción 3 seleccionada: ✍️ Escribe en el formulario, en el campo 'observación', el detalle (Nombre de Evidencia) que deseas validar nota."]],
+     ["Opción 3 seleccionada:\n👉 Abre este enlace para consultar las calificaciones:\n"
+      "https://docs.google.com/forms/d/e/1FAIpQLScT5XPto_HT4yC2GtXfhQFGKfznb47PgOnJDe3Zthm53Z3vrA/viewform?usp=dialog"]],
 
     [r"(.*)adiós|luego hablamos",
      ["¡Hasta luego! 👋 Escríbeme a este número de WhatsApp: 3052546933"]]
@@ -45,6 +45,7 @@ if __name__ == "__main__":
             print("Chatbot: ¡Hasta luego! 👋")
             break
         print("Chatbot:", responder(entrada))
+
 
 
 
