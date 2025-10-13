@@ -26,7 +26,7 @@ chat = Chat(pares, reflections)
 def responder(mensaje):
     mensaje = mensaje.lower().strip()
 
-    if mensaje == "1":
+    if mensaje == "m":
         return ("Selecciona una opción:\n"
                 "1️⃣ Calificaciones\n"
                 "2️⃣ No comprende la actividad\n"
