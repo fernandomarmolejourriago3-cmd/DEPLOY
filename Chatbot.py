@@ -33,7 +33,7 @@ def responder(mensaje):
                 "3️⃣ Reclamo de nota")
 
     respuesta = chat.respond(mensaje)
-    return respuesta or "No entendí, intenta con otra opción. 😅"
+    return respuesta or "No entendí, intenta colocando la letra "m" para identificar el requerimiento. 😅"
 
 
 # Ejemplo de prueba:
@@ -45,6 +45,7 @@ if __name__ == "__main__":
             print("Chatbot: ¡Hasta luego! 👋")
             break
         print("Chatbot:", responder(entrada))
+
 
 
 
