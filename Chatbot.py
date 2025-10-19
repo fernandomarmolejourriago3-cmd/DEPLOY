@@ -4,7 +4,7 @@ pares = [
     [r"hola|hi|hello|pola profe|hola profe fernando|hola fernando|fernando|compañero|hoa|hola instructor|instructor",
      ["¡Hola! ¿Cómo puedo ayudarte? 😊 Para conocer las opciones de asesoría escribe 'm'."]],
 
-    [r"profe|como estas",
+    [r"profe|como estas|Buenos días|Buenas Tardes|Buenas noches",
      ["Bien 😄 ¿y tú cómo estás?"]],
 
     [r"1",
