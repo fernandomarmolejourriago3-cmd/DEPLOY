@@ -33,7 +33,7 @@ def responder(mensaje):
                 "3️⃣ Reclamo de nota")
 
     respuesta = chat.respond(mensaje)
-    return respuesta or "No entendí, intenta colocando la letra "m" para identificar el requerimiento. 😅"
+    return respuesta or "No entendí, intenta colocando la letra m para identificar el requerimiento. 😅"
 
 
 # Ejemplo de prueba:
